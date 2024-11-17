@@ -1,4 +1,47 @@
-baseURL: https://example.org/
-languageCode: en-us
-title: My New Hugo Site
+baseURL: https://kotthoff.dev
+languageCode: de
+title: Florian Kotthoff
 theme: ["PaperMod"]
+enableRobotsTXT: true
+
+params:
+  homeInfoParams: true
+  profileMode:
+    enabled: true
+    title: "Florian Kotthoff" # optional default will be site title
+    subtitle: "Researcher @ OFFIS Institut für Informatik | Developer @ openpv.de"
+    imageUrl: "img/me.jpg" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+  defaultTheme: auto
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/FlorianK13"
+    - name: mastodon
+      url: https://mastodon.energy/@floko
+    - name: googlescholar
+      url: https://scholar.google.com/citations?user=Q3l2doEAAAAJ&hl
+
+defaultContentLanguage: "de"
+
+menu:
+  main:
+    - identifier: Projekte
+      name: Projekte
+      url: /projects/
+    - identifier: Publikationen
+      name: Publikationen
+      url: /publications/
+    - identifier: Blog
+      name: Blog
+      url: /posts/
+    - identifier: Suche
+      name: Suche
+      url: /search/
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
