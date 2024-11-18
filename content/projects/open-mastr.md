@@ -1,6 +1,6 @@
 ---
 date: "2022-01-01"
-draft: true
+draft: false
 title: "open-mastr: A Python Package to Download and Process the German Energy Registry Marktstammdatenregister"
 cover:
   image: img/openmastr.jpg
