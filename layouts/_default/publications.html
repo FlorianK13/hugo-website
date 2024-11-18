@@ -3,8 +3,8 @@
 </br>
 <div id="publications">Loading...</div>
 <script>
-  const orcidId = "0000-0003-3666-6122"
-  fetch(`https://pub.orcid.org/v3.0/${orcidId}/works`, {
+  const orcid = "{{ .Params.orcid }}"
+  fetch(`https://pub.orcid.org/v3.0/${orcid}/works`, {
     headers: { Accept: "application/json" },
   })
     .then((response) => response.json())
