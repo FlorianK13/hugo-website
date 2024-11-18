@@ -1,12 +1,18 @@
 baseURL: https://kotthoff.dev
-languageCode: de
+languageCode: en
 title: Florian Kotthoff
 theme: ["PaperMod"]
 enableRobotsTXT: true
+enableInlineShortcodes: true
 
 params:
+  ShowShareButtons: true
+  ShowBreadCrumbs: true
+  ShowRssButtonInSectionTermList: true
   homeInfoParams: true
   fediverse_creator: "@floko@mastodon.energy" 
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
   profileMode:
     enabled: true
     title: "Florian Kotthoff" # optional default will be site title
@@ -28,17 +34,17 @@ defaultContentLanguage: "de"
 
 menu:
   main:
-    - identifier: Projekte
-      name: Projekte
+    - identifier: Projects
+      name: Projects
       url: /projects/
-    - identifier: Publikationen
-      name: Publikationen
+    - identifier: Publications
+      name: Publications
       url: /publications/
     - identifier: Blog
       name: Blog
       url: /posts/
-    - identifier: Suche
-      name: Suche
+    - identifier: Search
+      name: Search
       url: /search/
 
 outputs:
