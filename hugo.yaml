@@ -6,6 +6,7 @@ enableRobotsTXT: true
 
 params:
   homeInfoParams: true
+  fediverse_creator: "@floko@mastodon.energy" 
   profileMode:
     enabled: true
     title: "Florian Kotthoff" # optional default will be site title
