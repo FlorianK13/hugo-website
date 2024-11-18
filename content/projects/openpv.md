@@ -1,7 +1,7 @@
 ---
 date: "2024-11-17T13:41:48+01:00"
 draft: false
-title: "OpenPV - Open Source Website to calculate yield of photovoltaic systems in Germany"
+title: "openpv.de - Open Source Website to calculate yield of photovoltaic systems in Germany"
 cover:
   image: img/openpv.png
 ---
