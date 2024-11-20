@@ -6,7 +6,6 @@ enableRobotsTXT: true
 enableInlineShortcodes: true
 
 params:
-  ShowShareButtons: true
   ShowBreadCrumbs: true
   ShowRssButtonInSectionTermList: true
   homeInfoParams: true
