@@ -1,6 +1,6 @@
 baseURL: https://kotthoff.dev
 languageCode: en
-title: Florian Kotthoff
+title: Kotthoff.
 theme: ["PaperMod"]
 enableRobotsTXT: true
 enableInlineShortcodes: true
