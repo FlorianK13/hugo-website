@@ -2,6 +2,8 @@
 date: '2024-11-20'
 draft: false
 title: 'Make Your Hugo Blog Posts Shine on Mastodon'
+cover:
+  image: img/posts/202411-mastodontag.jpg
 ---
 With their recent blog post *[Highlighting journalism on Mastodon](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)*, the creators of Mastodon announced incredibly awesome. From version 4.3.0 onwards, authors of blog posts and articles can be directly visible below shared links on Mastodon. If you write something interesting and someone shares this link on the fediverse, people will see your profile linked to the article. This is a great feature for writers to boost their profiles in the fediverse.
 
