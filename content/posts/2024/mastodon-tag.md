@@ -30,3 +30,6 @@ To get the `meta` tag on your Hugo powered blog, follow these steps:
 Next, you need to allow your Mastodon profile to be connected to links from your website. To do so, open the `Edit Profile` page in your mastodon account, navigate to the Verification tab, and add your website domain.
 
 You will now have the author tag appearing below your links. If you move to another mastodon server, just change the `fediverse_creator` parameter in your config file.
+
+## Edits
+As [@tinsukE](https://mas.to/@tinsuke) pointed out, for many templates including PaperMod it is not necessary to copy the whole `head.html` file. Instead you can insert the `<meta>` tag within an `extend_head.html` file, as shown [here](https://github.com/adityatelange/hugo-PaperMod/blob/master/layouts/partials/extend_head.html). This brings the advantage that future updates that the theme introduces to the `head.html` file will still be integrated in your website.
