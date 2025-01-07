@@ -25,3 +25,6 @@ The CIM is a set of of IEC standards. Those are:
 ## Useful Links
 * [CIM docs from zepben](https://zepben.github.io/evolve/docs/cim/cim100/)
 * [CGMES docs from Netbeheer Nederland](https://netbeheer-nederland.github.io/im-cgmes/)
+* [CIM Space: A Data Viewer for CIM Data](https://derrickoswald.github.io/CIMSpace)
+* [CIM Draw: Another Data Viewer for CIM Data](https://danielepala.github.io/CIMDraw/index.html#)
+* The [CIMReader](https://derrickoswald.github.io/CIMSpark/doc/scaladocs/ch/ninecode/model/index.html) is also some sort of documentation of CIM. If you scroll down a bit to the `Filter all members` search field you can search for any class of the CIM and get some info. Very Useful!
