@@ -21,7 +21,8 @@ title: 'Mastr Tutorial'
 
 # Let's start
 1. Install open-mastr
-````bash
+
+```bash
 pip install open-mastr
 ```
 
