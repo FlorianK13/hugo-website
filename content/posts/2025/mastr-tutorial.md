@@ -3,27 +3,53 @@ date: '2025-04-30'
 draft: true
 title: 'Mastr Tutorial'
 ---
-# The dataset
-* Marktstammdatenregister is a dataset of the german energy system
-* Contains almost every PV system, wind turbine, battery storage, hydropower plant etc. in Germany
-* Precise location information for every unit with installed power larger 30kW
+# The Dataset
+The Marktstammdatenregister is a dataset of the German energy system provided by Bundesnetagentur under the open License `Datenlizenz Deutschland – Namensnennung – Version 2.0`. It contains almost every PV system, wind turbine, battery storage, hydropower plant, etc. in Germany. The dataset provides precise location information for every unit with an installed power larger than 30kW.
 
 
-# What you will learn
-* Download todays version of the dataset using the python package open-mastr
-* Reading the table of all wind turbines into a pandas dataframe
-* Find the largest wind turbine in Germany
+In this tutorial, we will work with the Marktstammdatenregister dataset. You will learn how to:
+1. **Download today's version of the dataset**: We will use the Python package `open-mastr` to download the latest version of the Marktstammdatenregister dataset.
+2. **Read the table of all wind turbines into a pandas dataframe**: Using `pandas`, we will read the data about wind turbines from the downloaded dataset and store it in a dataframe.
+3. **Find installed capacity per German state**.
 
-# Prerequisities
+To complete this tutorial, you should have:
 * Python installed
-* Basic knowledge of python and the python package `pandas`
-* 15 GB of free hardware
+* Basic knowledge of Python programming and the `pandas` library
+* Approximately 10 GB of free disk space available to store the downloaded dataset
+
 
 # Let's start
 1. Install open-mastr
 
 ```bash
-pip install open-mastr
+pip install open-mastr 
 ```
 
-2. 
+2. Download the registry and parse the data on wind turbines
+```python
+from open_mastr import Mastr
+db = Mastr()
+db.download(data="wind")
+```
+Alternatively, other technologies like solar, storages, hydro etc can also be parsed. Find a full list at the [documentation page of open-mastr](https://open-mastr.readthedocs.io/en/latest/reference/basic/#open_mastr.Mastr.download)
+
+3. Use pandas to read the wind turbine table to a dataframe
+```python
+import pandas as pd
+table="wind_extended"
+df = pd.read_sql(sql=table, con=db.engine)
+```
+
+4. As a final step, we want to see how much wind capacity is installed per german state. Hence we aggregate the installed power per state:
+```python
+grouped = (
+    df.groupby("Bundesland")
+    .agg(
+        {"Nettonennleistung": lambda x: (x.sum() / 1e6)}
+    )  # Divide by 1e6 to convert kW to GW
+    .rename(columns={"Nettonennleistung": "total installed capacity [GW]"})
+    .sort_values(by="total installed capacity [GW]", ascending=False)
+)
+print(grouped)
+```
+We see that in spring 2025, the state "Niedersachsen" had the highest installed capacity with almost 19GW.
