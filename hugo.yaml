@@ -9,8 +9,7 @@ params:
   ShowBreadCrumbs: true
   ShowRssButtonInSectionTermList: true
   homeInfoParams: true
-  fediverse_creator: "@floko@mastodon.energy" 
-  ShowBreadCrumbs: true
+  fediverse_creator: "@floko@social.anoxinon.de" 
   ShowCodeCopyButtons: true
   profileMode:
     enabled: true
@@ -25,7 +24,7 @@ params:
       title: View Source on Github
       url: "https://github.com/FlorianK13"
     - name: mastodon
-      url: https://mastodon.energy/@floko
+      url: https://social.anoxinon.de/@floko
     - name: googlescholar
       url: https://scholar.google.com/citations?user=Q3l2doEAAAAJ&hl
 
