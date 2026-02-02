@@ -15,10 +15,10 @@ params:
     enabled: true
     title: "Florian Kotthoff" # optional default will be site title
     subtitle: "[Researcher @ OFFIS Institut für Informatik](https://www.offis.de/) | [Developer @ openpv.de](https://www.openpv.de)"
-    imageUrl: "img/me.jpg" # optional
+    imageUrl: "img/fancy-profile-image.png" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
-  defaultTheme: auto
+  defaultTheme: dark
   socialIcons:
     - name: github
       title: View Source on Github
