@@ -15,3 +15,7 @@ Make sure to update the submodule:
 git submodule update --init --recursive
 ```
 
+## To update the PaperMod theme
+```bash
+cd themes/PaperMod && git pull origin master
+```
