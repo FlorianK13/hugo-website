@@ -8,17 +8,36 @@
   fetch(`https://pub.orcid.org/v3.0/${orcid}/works`, {
     headers: { Accept: "application/json" },
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`ORCID API returned HTTP ${response.status}`)
+      }
+      return response.json()
+    })
     .then((data) => {
       const publications = data.group
         .map((work) => {
-          console.log(work)
-          const title = work["work-summary"][0].title.title.value
+          const summary =
+            work && work["work-summary"] && work["work-summary"][0]
+              ? work["work-summary"][0]
+              : {}
+          const title =
+            (summary &&
+              summary.title &&
+              summary.title.title &&
+              summary.title.title.value) ||
+            "Untitled"
           const journalTitle =
-            work["work-summary"][0]["journal-title"]?.value || " "
-          const externalUrl = work["work-summary"][0]["url"].value || "#"
+            (summary && summary["journal-title"] && summary["journal-title"].value) ||
+            " "
+          const externalUrl =
+            (summary && summary.url && summary.url.value) || "#"
           const publicationYear =
-            work["work-summary"][0]["publication-date"]["year"]?.value || " "
+            (summary &&
+              summary["publication-date"] &&
+              summary["publication-date"]["year"] &&
+              summary["publication-date"]["year"].value) ||
+            " "
           return `
           <li>
             <a href="${externalUrl}" target="_blank"><strong>${title}</strong></a><br>
@@ -34,6 +53,7 @@
       ).innerHTML = `<ul>${publications}</ul>`
     })
     .catch((error) => {
+      console.error("Failed to load publications:", error)
       document.getElementById("publications").textContent =
         "Failed to load publications."
     })
