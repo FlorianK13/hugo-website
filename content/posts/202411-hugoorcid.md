@@ -48,16 +48,20 @@ I thought, There must be a way to integrate my ORCID publication list. Enter **H
                 (summary && summary["journal-title"] && summary["journal-title"].value) ||
                 " "
             const externalUrl =
-                (summary && summary.url && summary.url.value) || "#"
+                (summary && summary.url && summary.url.value) || null
             const publicationYear =
                 (summary &&
                 summary["publication-date"] &&
                 summary["publication-date"]["year"] &&
                 summary["publication-date"]["year"].value) ||
                 " "
+            const link =
+                externalUrl && externalUrl !== "#"
+                ? `<a href="${externalUrl}" target="_blank" rel="noopener"><strong>${title}</strong></a>`
+                : `<strong>${title}</strong>`
             return `
             <li>
-                <a href="${externalUrl}" target="_blank"><strong>${title}</strong></a><br>
+                ${link}<br>
                 <i>${publicationYear}${
                 journalTitle != " " ? ", " : ""
             }${journalTitle}</i>
